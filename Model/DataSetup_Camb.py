@@ -36,7 +36,6 @@ def DataSetup(run_no,dat_name):
     ##df_wind = pd.read_csv('data_wind.csv',header=0)
     
     ##hourly ts of load at substation-level
-    # df_load = pd.read_csv('data_camb_load_2016.csv',header=0) 
     df_load = pd.read_csv('../Data/data_camb_load.csv',header=0) 
     df_load = pd.concat([df_load] * num_yrs, ignore_index=True)
     
@@ -337,13 +336,6 @@ def DataSetup(run_no,dat_name):
                 f.write(z + '\t' + str(h+1) + '\t' + str(df_load.loc[h,z]) + '\n')
         f.write(';\n\n')
     
-        # # hydro (hourly)
-        # f.write('param:' + '\t' + 'SimHydro:=' + '\n')      
-        # for z in h_nodes:
-        #     for h in range(0,len(df_hydro)): 
-        #         f.write(z + '\t' + str(h+1) + '\t' + str(df_hydro.loc[h,z]) + '\n')
-        # f.write(';\n\n')
-    
         # hydro_import (hourly)
         f.write('param:' + '\t' + 'SimHydroImport:=' + '\n')      
         for z in h_imports:
@@ -373,8 +365,5 @@ def DataSetup(run_no,dat_name):
         
     return df_gen        
     
-# print ('Complete:',data_name)    
-# del f,z,h,match,p_match,df_paths,source,sink,unit_name,gen,data_name,df_trans1,df_trans2
-
 df_gen = DataSetup(run_no,dat_name)    
     
