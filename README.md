@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/665211835.svg)](https://zenodo.org/badge/latestdoi/665211835)
+
 # PowNetRes_FC: Coupled reservoir-power system model with streamflow forecasts
 
 PowNetRes_FC couples a reservoir operation model with a power system model. Reservoir operations are simulated using an ad-hoc python model, and the power system model is [PowNet](https://zenodo.org/record/4688309#.YHc5euhKguU). 
