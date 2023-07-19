@@ -261,11 +261,6 @@ def MwhCon_initial(model,j,i): #v1.3
       return Constraint.Skip
 model.initial_mwh_constr = Constraint(model.Generators,model.HH_periods, rule=MwhCon_initial)
 
-
-# def OnCon(model,j,i):
-#     return model.mwh[j,i] <= model.on[j,i] * model.m
-# model.OnConstraint = Constraint(model.Generators,model.HH_periods,rule = OnCon)
-
 def OnCon_initial(model,j,i):
     if i == 0:
         return (model.on[j,i] == model.ini_on[j])
@@ -338,15 +333,6 @@ model.MaxCap= Constraint(model.Generators,model.hh_periods,rule=MaxC)
 def MinC(model,j,i):
     return model.mwh[j,i] >= model.on[j,i] * model.mincap[j]
 model.MinCap= Constraint(model.Generators,model.hh_periods,rule=MinC)
-
-#Max capacity constraints on domestic hydropower 
-# def HydroC(model,z,i):
-#     return model.hydro[z,i] <= model.HorizonHydro[z,i]  
-# model.HydroConstraint= Constraint(model.h_nodes,model.hh_periods,rule=HydroC)
-
-# def HydroC(model,i):
-#     return model.hydro['HYDRO1',i] <= model.HorizonHydro['HYDRO1']  
-# model.HydroConstraint= Constraint(model.hh_periods,rule=HydroC)
 
 def HydroC2(model,j,i):
     if i==1:
