@@ -15,10 +15,10 @@ The data used in this repository include:
 # How to run
 ### PowNetRes_FC comprises seven python scripts. 
 
-#### 1. Main script: PowNetSolver_FC.py
-All other scripts can be called from PowNetSolver_FC.py
+#### 1. Main script: PowNetSolver.py
+All other scripts can be called from PowNetSolver.py
 Here we initialize the simulation and define the inputs for the models. 
-- FC_typ: the type of forecast (perfect / climatology / one of the forecast members)
+- FC_typ: the type of forecast - perfect / climatology / one of the forecast members ; to run with no forecast - FC_typ = ''
 - mem_num: forecast member
 - res_reop: input the names of the reservoirs that we would like to re-operate (empty if no re-operation required)
 - gen_cost: generation cost of each type of fuel or per-unit import cost
