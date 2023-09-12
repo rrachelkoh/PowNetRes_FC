@@ -43,6 +43,6 @@ Initializes the reservoir parameters to be stored in two dictionaries
 Reservoir release decisions are made based on a forecast over the next p1 days, and implemented for the next p2 days. 
 
 #### 7. (Optional) Reservoir re-operation model: ResModel2_d.py 
-This model will be activated if res_reop in PowNetSolver_FC.py is not empty. 
+This model will be activated if res_reop in PowNetSolver.py is not empty. 
 The goal of this model is to match the hydropower production by the reservoirs and the actual hydropower dispatched by the power system (Refer to [Koh et al., 2022](https://doi.org/10.1016/j.apenergy.2022.119386) for more details about this model). 
 
